@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F7FF6A4-1531-4834-8849-8803A7E80362}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BudgetPlan</RootNamespace>
+    <AssemblyName>BudgetPlan</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Erp.Adapters.AccountBudget, Version=11.2.200.0, Culture=neutral, PublicKeyToken=5d3fa3c7105d7992, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Epicor\ERP10\LocalClients\Kinetic 2022.2.6 Client EPICORTEST\EPICORTEST\Erp.Adapters.AccountBudget.dll</HintPath>
+    </Reference>
+    <Reference Include="Erp.Contracts.BO.AccountBudget, Version=11.2.200.0, Culture=neutral, PublicKeyToken=5d3fa3c7105d7992, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Epicor\ERP10\LocalClients\Kinetic 2022.2.6 Client EPICORTEST\EPICORTEST\Erp.Contracts.BO.AccountBudget.dll</HintPath>
+    </Reference>
+    <Reference Include="Ice.Core.Session, Version=4.2.200.0, Culture=neutral, PublicKeyToken=5d3fa3c7105d7992, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Epicor\ERP10\LocalClients\Kinetic 2022.2.6 Client EPICORTEST\EPICORTEST\Ice.Core.Session.dll</HintPath>
+    </Reference>
+    <Reference Include="Ice.Lib.EpiClientLib, Version=4.2.200.0, Culture=neutral, PublicKeyToken=5d3fa3c7105d7992, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Epicor\ERP10\LocalClients\Kinetic 2022.2.6 Client EPICORTEST\EPICORTEST\Ice.Lib.EpiClientLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Ice.UI.EpiUIFunctionLib, Version=4.2.200.0, Culture=neutral, PublicKeyToken=5d3fa3c7105d7992, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Epicor\ERP10\LocalClients\Kinetic 2022.2.6 Client EPICORTEST\EPICORTEST\Ice.UI.EpiUIFunctionLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Web.Design">
+      <HintPath>..\lib\RCAJAX\2020.1.219.45\Telerik.Web.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.Spreadsheet">
+      <HintPath>..\lib\RCAJAX\2020.1.219.45\AdditionalLibraries\Bin45\Telerik.Web.Spreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>..\lib\RCAJAX\2020.1.219.45\Telerik.Web.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins">
+      <HintPath>..\lib\RCAJAX\2020.1.219.45\Telerik.Web.UI.Skins.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core">
+      <HintPath>..\lib\RCAJAX\2020.1.219.45\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow">
+      <HintPath>..\lib\RCAJAX\2020.1.219.45\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Flow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet">
+      <HintPath>..\lib\RCAJAX\2020.1.219.45\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml">
+      <HintPath>..\lib\RCAJAX\2020.1.219.45\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip">
+      <HintPath>..\lib\RCAJAX\2020.1.219.45\AdditionalLibraries\Bin45\Telerik.Windows.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\RadCaptcha\0.wav" />
+    <Content Include="App_Data\RadCaptcha\1.wav" />
+    <Content Include="App_Data\RadCaptcha\2.wav" />
+    <Content Include="App_Data\RadCaptcha\3.wav" />
+    <Content Include="App_Data\RadCaptcha\4.wav" />
+    <Content Include="App_Data\RadCaptcha\5.wav" />
+    <Content Include="App_Data\RadCaptcha\6.wav" />
+    <Content Include="App_Data\RadCaptcha\7.wav" />
+    <Content Include="App_Data\RadCaptcha\8.wav" />
+    <Content Include="App_Data\RadCaptcha\9.wav" />
+    <Content Include="App_Data\RadCaptcha\A.wav" />
+    <Content Include="App_Data\RadCaptcha\B.wav" />
+    <Content Include="App_Data\RadCaptcha\C.wav" />
+    <Content Include="App_Data\RadCaptcha\D.wav" />
+    <Content Include="App_Data\RadCaptcha\E.wav" />
+    <Content Include="App_Data\RadCaptcha\F.wav" />
+    <Content Include="App_Data\RadCaptcha\G.wav" />
+    <Content Include="App_Data\RadCaptcha\H.wav" />
+    <Content Include="App_Data\RadCaptcha\I.wav" />
+    <Content Include="App_Data\RadCaptcha\J.wav" />
+    <Content Include="App_Data\RadCaptcha\K.wav" />
+    <Content Include="App_Data\RadCaptcha\L.wav" />
+    <Content Include="App_Data\RadCaptcha\M.wav" />
+    <Content Include="App_Data\RadCaptcha\N.wav" />
+    <Content Include="App_Data\RadCaptcha\O.wav" />
+    <Content Include="App_Data\RadCaptcha\P.wav" />
+    <Content Include="App_Data\RadCaptcha\Q.wav" />
+    <Content Include="App_Data\RadCaptcha\R.wav" />
+    <Content Include="App_Data\RadCaptcha\S.wav" />
+    <Content Include="App_Data\RadCaptcha\T.wav" />
+    <Content Include="App_Data\RadCaptcha\U.wav" />
+    <Content Include="App_Data\RadCaptcha\V.wav" />
+    <Content Include="App_Data\RadCaptcha\W.wav" />
+    <Content Include="App_Data\RadCaptcha\X.wav" />
+    <Content Include="App_Data\RadCaptcha\Y.wav" />
+    <Content Include="App_Data\RadCaptcha\Z.wav" />
+    <Content Include="BudgetApproval.aspx" />
+    <Content Include="BudgetEntry.aspx" />
+    <Content Include="BudgetEntryR2.aspx" />
+    <Content Include="BudgetPlan.aspx" />
+    <Content Include="BudgetPlan_CellDropdownList.aspx" />
+    <Content Include="BudgetPlan_Popup.aspx" />
+    <Content Include="BudgetTemplate.aspx" />
+    <Content Include="ChangeCompany.aspx" />
+    <Content Include="ChangePW.aspx" />
+    <Content Include="CompanyRegistry.aspx" />
+    <Content Include="DialogSearchGLAccount.aspx" />
+    <Content Include="DialogSearchSegValue.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="LoginChangePW.aspx" />
+    <Content Include="LoginDebug.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="MasterPageSingleMenu.Master" />
+    <Content Include="scripts\jquery-1.7.1.min.js" />
+    <Content Include="UploadToEpicor.aspx" />
+    <Content Include="UserRegistry.aspx" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
+    <Content Include="WebForm3.aspx" />
+    <Content Include="WebForm4.aspx" />
+    <Content Include="WebForm5.aspx" />
+    <Content Include="WebForm_GridSelectGLAByBatchEdit.aspx" />
+    <Content Include="WebForm_GridSelectGLAByTemplateForm.aspx" />
+    <Content Include="WebForm_GridSelectGLAccount.aspx" />
+    <Content Include="WebForm_Menu.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Grid.aspx" />
+    <Content Include="images\Chrysanthemum.jpg" />
+    <Content Include="images\Desert.jpg" />
+    <Content Include="images\Hydrangeas.jpg" />
+    <Content Include="images\Jellyfish.jpg" />
+    <Content Include="images\Koala.jpg" />
+    <Content Include="images\Lighthouse.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\Penguins.jpg" />
+    <Content Include="images\Thumbnails\Chrysanthemum.jpg" />
+    <Content Include="images\Thumbnails\Desert.jpg" />
+    <Content Include="images\Thumbnails\Hydrangeas.jpg" />
+    <Content Include="images\Thumbnails\Jellyfish.jpg" />
+    <Content Include="images\Thumbnails\Koala.jpg" />
+    <Content Include="images\Thumbnails\Lighthouse.jpg" />
+    <Content Include="images\Thumbnails\Penguins.jpg" />
+    <Content Include="images\Thumbnails\Tulips.jpg" />
+    <Content Include="images\Tulips.jpg" />
+    <Content Include="ListView.aspx" />
+    <Content Include="scripts\scripts.js" />
+    <Content Include="styles\base.css" />
+    <Content Include="styles\default.css" />
+    <Content Include="styles\grid.css" />
+    <Content Include="styles\listView.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Article.cs" />
+    <Compile Include="BudgetApproval.aspx.cs">
+      <DependentUpon>BudgetApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BudgetApproval.aspx.designer.cs">
+      <DependentUpon>BudgetApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BudgetEntry.aspx.cs">
+      <DependentUpon>BudgetEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BudgetEntry.aspx.designer.cs">
+      <DependentUpon>BudgetEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BudgetEntryR2.aspx.cs">
+      <DependentUpon>BudgetEntryR2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BudgetEntryR2.aspx.designer.cs">
+      <DependentUpon>BudgetEntryR2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BudgetPlan.aspx.cs">
+      <DependentUpon>BudgetPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BudgetPlan.aspx.designer.cs">
+      <DependentUpon>BudgetPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BudgetPlan_CellDropdownList.aspx.cs">
+      <DependentUpon>BudgetPlan_CellDropdownList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BudgetPlan_CellDropdownList.aspx.designer.cs">
+      <DependentUpon>BudgetPlan_CellDropdownList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BudgetPlan_Popup.aspx.cs">
+      <DependentUpon>BudgetPlan_Popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BudgetPlan_Popup.aspx.designer.cs">
+      <DependentUpon>BudgetPlan_Popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BudgetTemplate.aspx.cs">
+      <DependentUpon>BudgetTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BudgetTemplate.aspx.designer.cs">
+      <DependentUpon>BudgetTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeCompany.aspx.cs">
+      <DependentUpon>ChangeCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangeCompany.aspx.designer.cs">
+      <DependentUpon>ChangeCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePW.aspx.cs">
+      <DependentUpon>ChangePW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePW.aspx.designer.cs">
+      <DependentUpon>ChangePW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassEpicor.cs" />
+    <Compile Include="ClassMain.cs" />
+    <Compile Include="CompanyRegistry.aspx.cs">
+      <DependentUpon>CompanyRegistry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanyRegistry.aspx.designer.cs">
+      <DependentUpon>CompanyRegistry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DialogSearchGLAccount.aspx.cs">
+      <DependentUpon>DialogSearchGLAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DialogSearchGLAccount.aspx.designer.cs">
+      <DependentUpon>DialogSearchGLAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DialogSearchSegValue.aspx.cs">
+      <DependentUpon>DialogSearchSegValue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DialogSearchSegValue.aspx.designer.cs">
+      <DependentUpon>DialogSearchSegValue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid.aspx.cs">
+      <DependentUpon>Grid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid.aspx.designer.cs">
+      <DependentUpon>Grid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Image.cs" />
+    <Compile Include="ListView.aspx.cs">
+      <DependentUpon>ListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListView.aspx.designer.cs">
+      <DependentUpon>ListView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginChangePW.aspx.cs">
+      <DependentUpon>LoginChangePW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginChangePW.aspx.designer.cs">
+      <DependentUpon>LoginChangePW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDebug.aspx.cs">
+      <DependentUpon>LoginDebug.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginDebug.aspx.designer.cs">
+      <DependentUpon>LoginDebug.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageLoginMenu.Master.cs">
+      <DependentUpon>MasterPageLoginMenu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageLoginMenu.Master.designer.cs">
+      <DependentUpon>MasterPageLoginMenu.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageSingleMenu.Master.cs">
+      <DependentUpon>MasterPageSingleMenu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageSingleMenu.Master.designer.cs">
+      <DependentUpon>MasterPageSingleMenu.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UploadToEpicor.aspx.cs">
+      <DependentUpon>UploadToEpicor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadToEpicor.aspx.designer.cs">
+      <DependentUpon>UploadToEpicor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRegistry.aspx.cs">
+      <DependentUpon>UserRegistry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRegistry.aspx.designer.cs">
+      <DependentUpon>UserRegistry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm4.aspx.cs">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm4.aspx.designer.cs">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm5.aspx.cs">
+      <DependentUpon>WebForm5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm5.aspx.designer.cs">
+      <DependentUpon>WebForm5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm_GridSelectGLAByBatchEdit.aspx.cs">
+      <DependentUpon>WebForm_GridSelectGLAByBatchEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm_GridSelectGLAByBatchEdit.aspx.designer.cs">
+      <DependentUpon>WebForm_GridSelectGLAByBatchEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm_GridSelectGLAByTemplateForm.aspx.cs">
+      <DependentUpon>WebForm_GridSelectGLAByTemplateForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm_GridSelectGLAByTemplateForm.aspx.designer.cs">
+      <DependentUpon>WebForm_GridSelectGLAByTemplateForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm_GridSelectGLAccount.aspx.cs">
+      <DependentUpon>WebForm_GridSelectGLAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm_GridSelectGLAccount.aspx.designer.cs">
+      <DependentUpon>WebForm_GridSelectGLAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm_Menu.aspx.cs">
+      <DependentUpon>WebForm_Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm_Menu.aspx.designer.cs">
+      <DependentUpon>WebForm_Menu.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\RadSpell\de-DE.tdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\RadSpell\en-US.tdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\RadSpell\fr-FR.tdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <Content Include="MasterPageLoginMenu.Master" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49573</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49573/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

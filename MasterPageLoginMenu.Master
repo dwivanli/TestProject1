@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageLoginMenu.master.cs" Inherits="BudgetPlan.MasterPageLoginMenu" %>
+
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <link href="styles/base.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <telerik:RadScriptManager runat="server"></telerik:RadScriptManager>
+        <div id="wrapper">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="site logo" />
+            </a>
+            <div class="header">
+                <asp:Label ID="LabelMasterTitle" runat="server" ForeColor="LightGray" Style="text-align:center;" Font-Size="Larger" Font-Bold="true"></asp:Label>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr style="margin-top: 40px" />
+            <div class="footer">
+               Version 2.1<br/>Data World Solutions Limited.
+            </div>
+        </div>
+    </form>
+</body>
+</html>
